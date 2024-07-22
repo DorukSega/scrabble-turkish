@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    width: 210mm;
+    padding-top: .5cm;
+    padding-left: .5cm;
+    padding-right: .5cm;
+    font-size: 6mm;
+}
+
+html{
+    display: flex;
+    justify-content: center;
+}
+
+.title{
+    align-self: center;
+    text-align: center;
+    padding-top: .2cm;
+    font-weight: bold;
+    font-size: 7mm;
+}
+.words{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    column-gap: .1cm;
+    row-gap: .2cm;
+}
