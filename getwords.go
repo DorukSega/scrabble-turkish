@@ -72,20 +72,20 @@ func main() {
 		return utf8.RuneCountInString(singleWords[i]) < utf8.RuneCountInString(singleWords[j])
 	})
 
-	fmt.Println("<link rel='stylesheet' href='style.css'>")
+	//fmt.Println("<link rel='stylesheet' href='style.css'>")
 	var current_chrsize = 0
 	for _, word := range singleWords {
 		if ct := utf8.RuneCountInString(word); ct > current_chrsize {
 			current_chrsize = ct
-			if ct != 2 {
-				fmt.Println("</div>")
-			}
-			fmt.Printf("<div class='title'>%d Harf</div>\n", ct)
-			fmt.Println("<div class='words'>")
+			// if ct != 2 {
+			// 	fmt.Println("</div>")
+			// }
+			fmt.Printf("## %d Harf\n", ct)
+			// fmt.Println("<div class='words'>")
 		}
-		fmt.Println("<div>")
+		//fmt.Println("<div>")
 		fmt.Println(word)
-		fmt.Println("</div>")
+		//fmt.Println("</div>")
 	}
-	fmt.Println("</div>")
+	//fmt.Println("</div>")
 }
