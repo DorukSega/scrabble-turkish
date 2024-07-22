@@ -1,3 +1,6 @@
+# Turkish Scrabble Word List
+Scrabble word list generated from TDK's [Güncel Türkçe Sözlük](https://sozluk.gov.tr/), using the `autocomplete.json` file exposed by the website.
+The pdf file called `sözlük.pdf` is also provided as a print ready form. Each word section is grouped based on letter count to help with memorizing.
 ## 2 Harf
 KI
 AK
