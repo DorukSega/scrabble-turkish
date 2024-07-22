@@ -27,7 +27,11 @@ func ToUpper(str string) string {
 		if r == utf8.RuneError && size <= 1 {
 			return str
 		}
-		highstr += string(unicode.ToUpper(r))
+		if r == 'i' {
+			highstr += "İ"
+		} else {
+			highstr += string(unicode.ToUpper(r))
+		}
 		str = str[size:]
 	}
 	return highstr
@@ -60,9 +64,9 @@ func main() {
 	var singleWords []string
 	for _, item := range items {
 		if isSingleWord(item.Madde) && utf8.RuneCountInString(item.Madde) > 1 && !unicode.IsDigit([]rune(item.Madde)[0]) {
-			if lowerWord := ToUpper(item.Madde); !wordMap[lowerWord] {
-				singleWords = append(singleWords, lowerWord)
-				wordMap[lowerWord] = true
+			if higherWord := ToUpper(item.Madde); !wordMap[higherWord] {
+				singleWords = append(singleWords, higherWord)
+				wordMap[higherWord] = true
 			}
 		}
 	}
@@ -82,6 +86,7 @@ func main() {
 			}
 			fmt.Printf("<div class='title'>%d Harf</div>\n", ct)
 			fmt.Println("<div class='words'>")
+			//fmt.Printf("## %d Harf\n", ct)
 		}
 		fmt.Println("<div>")
 		fmt.Println(word)
